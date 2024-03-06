@@ -13,26 +13,52 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('/trangchu', function () {
-    return view('trangchu');
-});
+// Route::get('/trangchu', function () {
+//     return view('trangchu');
+// });
 
-Route::get('/gioithieu', function () {
-    return view('gioithieu');
-});
+// Route::get('/gioithieu', function () {
+//     return view('gioithieu');
+// });
 
-Route::get('/ban', function () {
-    return view('ban');
-});
+// Route::get('/ban', function () {
+//     return view('ban');
+// });
 
-Route::get('/ghe', function () {
-    return view('ghe');
-});
+// Route::get('/ghe', function () {
+//     return view('ghe');
+// });
 
-Route::get('/lienhe', function () {
-    return view('lienhe');
+// Route::get('/lienhe', function () {
+//     return view('lienhe');
+// });
+
+// Route::get('/{key?}', function ($key = 'welcome') {
+//     return view($key);
+// })->whereAlpha('key');
+
+Route::prefix('admin')->group(function () {
+    Route::get('/trangchu', function () {
+        return view('trangchu');
+    });
+
+    Route::get('/gioithieu', function () {
+        return view('gioithieu');
+    });
+
+    Route::get('/ban', function () {
+        return view('ban');
+    });
+
+    Route::get('/ghe', function () {
+        return view('ghe');
+    });
+
+    Route::get('/lienhe', function () {
+        return view('lienhe');
+    });
 });
