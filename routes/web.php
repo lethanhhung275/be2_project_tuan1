@@ -13,33 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
-// Route::get('/trangchu', function () {
-//     return view('trangchu');
-// });
+// Route::get('/demo', function ($name, $pass) {
+//     return view('demo', ['name' => $name]);
+// })->middleware('CheckLogin');
 
-// Route::get('/gioithieu', function () {
-//     return view('gioithieu');
-// });
-
-// Route::get('/ban', function () {
-//     return view('ban');
-// });
-
-// Route::get('/ghe', function () {
-//     return view('ghe');
-// });
-
-// Route::get('/lienhe', function () {
-//     return view('lienhe');
-// });
-
-// Route::get('/{key?}', function ($key = 'welcome') {
-//     return view($key);
-// })->whereAlpha('key');
+Route::post('/demo', function (Illuminate\Http\Request $request) {
+    return view('demo');
+})->middleware('CheckLogin');
 
 Route::prefix('admin')->group(function () {
     Route::get('/trangchu', function () {
@@ -61,4 +45,8 @@ Route::prefix('admin')->group(function () {
     Route::get('/lienhe', function () {
         return view('lienhe');
     });
+});
+
+Route::get('/login', function () {
+    return view('login');
 });
